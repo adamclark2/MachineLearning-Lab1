@@ -4,6 +4,6 @@ The lab!!
 # People
 Adam <adam.clark2@maine.edu>  
 Alex <>  
-Steven <>  
+Steven <steven.doherty@maine.edu>  
 
 # ...
