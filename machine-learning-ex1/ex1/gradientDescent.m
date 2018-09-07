@@ -24,10 +24,22 @@ for iter = 1:num_iters
 
 
     % ============================================================
-    
+
+    m = length(X);
+    tmpSum = 0;
+    for i = 1:m
+        h = theta' * X(i, :)'; # This could be X*theta or theta'*X' (See computeCost)
+
+        # Note: the formula in the book calls for (X sub j super i)
+        # this is the vector at i in X transpose
+        tmpSum = tmpSum + (h - y(i)) * (X')(:, i);
+    endfor
+
+    # See formula in ex1.pdf page 6
+    theta = theta - (alpha * 1/m) * tmpSum;
+
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
-
 end
 
 end
