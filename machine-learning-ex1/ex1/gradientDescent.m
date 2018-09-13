@@ -4,7 +4,6 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
 %   taking num_iters gradient steps with learning rate alpha
 
 % Initialize some useful values
-m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
 
 for iter = 1:num_iters
@@ -27,15 +26,16 @@ for iter = 1:num_iters
 
     m = length(X);
     tmpSum = 0;
+    xTranspose = X';
     for i = 1:m
-        h = theta' * X(i, :)'; # This could be X*theta or theta'*X' (See computeCost)
+        h = theta' * X(i, :)'; % This could be X*theta or theta'*X' (See computeCost)
 
-        # Note: the formula in the book calls for (X sub j super i)
-        # this is the vector at i in X transpose
-        tmpSum = tmpSum + (h - y(i)) * (X')(:, i);
-    endfor
+        % Note: the formula in the book calls for (X sub j super i)
+        % this is the vector at i in X transpose
+        tmpSum = tmpSum + (h - y(i)) * xTranspose(:, i);
+    end
 
-    # See formula in ex1.pdf page 6
+    % See formula in ex1.pdf page 6
     theta = theta - (alpha * 1/m) * tmpSum;
 
     % Save the cost J in every iteration    
