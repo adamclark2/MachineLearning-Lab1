@@ -7,7 +7,7 @@ Alex <>
 Steven <steven.doherty@maine.edu>  
 
 # ToDo
-- [ ] warmUpExrcise.m
-- [ ] plotData.m
-- [ ] computeCost.m
-- [ ] gradientDescent.m
+- [x] warmUpExrcise.m
+- [x] plotData.m
+- [x] computeCost.m
+- [x] gradientDescent.m
